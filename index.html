@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function upDate(previewPic){
+            document.getElementById("image").innerHTML=previewPic.alt;
+            var newbg = document.querySelector("#image");
+            var newsrc=previewPic.src;
+            newbg.style.backgroundImage="url("+newsrc+")";
+            newbg.style.backdropFilter= "blur(7px)";
+        }
+
+        function unDo(){
+            document.getElementById("image").innerHTML= "Hover over an image below to display here.";
+            var newbg = document.querySelector("#image");
+            newbg.style.backgroundImage="url('https://www.pinterest.com/pin/578290408387285587/')";
+        }
+    </script>
+</head>
+<body>
+    <div id="image">
+        Hover over an image below to display here.
+    </div>
+
+    <img class="preview" alt="BABAR AZAM" src="1.jpg" onmouseover = "upDate(this)" onmouseout ="unDo()">
+    
+    <img class="preview" alt="RIZWAN" src="3.jpg" onmouseover = "upDate(this)" onmouseout ="unDo()">
+    
+    <img class="preview" alt="AFRIDI" src="6.jpg" onmouseover = "upDate(this)" onmouseout ="unDo()">
+</body>
+</html>
